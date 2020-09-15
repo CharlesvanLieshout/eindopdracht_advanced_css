@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+
+body {
+  background-color: #c3cfe2;
+  font-family: "Noto Sans", sans-serif;
+}
+
+/* Portfolio bestaat op desktop uit een flexbox of css-grid met 3 kolommen.
+On hover komt er een animated transistion en verdwijnt  geleidelijk de foto. In plaats daarvan verschijnt er een button.
+*/
+
+/* De flexbox bestaat uit een container met items. De items bevatten een image en een button */
+
+.portfolio-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.portfolio-item {
+  display: flex;
+  border-radius: 25px;
+  margin: 10px;
+  position: relative;
+  width: 400px;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  border: 2px solid grey;
+  border-radius: 15%;
+  background-color: whitesmoke;
+  color: navy;
+  visibility: hidden;
+  position: relative;
+  left: -200px;
+  transition: visibility;
+  transition-duration: 0.7s ease-in-out;
+  transition-delay: 0.5s;
+}
+
+.portfolio-item img {
+  border-radius: 25px;
+  width: 400px;
+  transition-duration: 0.7s ease-in-out;
+  opacity: 1;
+  transition: opacity 0.7s ease-in-out;
+}
+
+.portfolio-item img:hover {
+  transform: translatex(24px);
+
+  opacity: 0%;
+}
+
+.portfolio-item:hover {
+  button {
+    visibility: visible;
+  }
+  background-color: #686de0;
+}
